@@ -24,6 +24,8 @@ Construir un modelo de clasificación que prediga si un lead comprará (`compra 
 | Variable objetivo | `compra` (binaria) |
 | Tasa de conversión | 37.6% |
 
+> **Origen y licencia del dataset.** `Leads.csv` es el conjunto público *Lead Scoring — X Education*, distribuido en Kaggle bajo licencia **CC0 1.0 (dominio público)**. Es un caso clásico de clasificación de leads, empleado también como práctica en cursos de ciencia de datos. Las cabeceras se han traducido al español; los datos no se han alterado. El EDA, la modelización, la verificación de métricas y las conclusiones de este repositorio son de elaboración propia.
+
 ## Resultados
 
 | Modelo | AUC-ROC | F1-Score |
@@ -59,7 +61,7 @@ Construir un modelo de clasificación que prediga si un lead comprará (`compra 
 lead_scoring/
 ├── lead_scoring.ipynb        # Notebook principal con EDA, modelos y visualizaciones
 ├── verificacion_metricas.py  # Réplica de los modelos — reproduce las métricas del README
-├── Leads.csv                 # Dataset original
+├── Leads.csv                 # Dataset público X Education (Kaggle, CC0)
 ├── requirements.txt          # Dependencias
 └── README.md                 # Este archivo
 ```
