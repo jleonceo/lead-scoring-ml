@@ -75,4 +75,4 @@ jupyter notebook lead_scoring.ipynb
 
 ---
 
-*Juan Luis León Rodríguez · TechAcces Portfolio 2026*
+*Parte del portfolio de [Juan Luis León](https://github.com/jleonceo) · [juanluisleon.vercel.app](https://juanluisleon.vercel.app) · Licencia [MIT](LICENSE)*
