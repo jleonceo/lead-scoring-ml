@@ -91,9 +91,9 @@ Este análisis es una pieza de un portfolio de casos de analítica. Las piezas h
 
 ### Business problem
 
-Companies running inbound marketing bring in more leads than the sales team can ever work through. With no way to rank them, the funnel backs up and deals are lost.
+Companies running inbound marketing bring in more leads than the sales team can ever work through. With no way to rank them, the channel gets saturated and deals are lost.
 
-**Lead scoring** is the technique that fixes this: it puts a probability of buying on every lead, so the sales team spends its time where the return is.
+**Lead scoring** is the technique that fixes this: it puts a probability of buying on every lead, so the sales team spends its time where the return is highest.
 
 ### Goal
 
@@ -108,7 +108,7 @@ Build a classification model that predicts whether a lead will buy (`compra = 1`
 | Target | `compra` (binary) |
 | Conversion rate | 37.6% |
 
-> **Dataset origin and licence.** `Leads.csv` is the public *Lead Scoring · X Education* set, distributed on Kaggle under a **CC0 1.0 (public domain)** licence. It is a classic lead classification case, also used as coursework on data science programmes. The headers were translated into Spanish; the data itself was left untouched. The EDA, the modelling, the metric checks and the conclusions in this repository are my own work.
+> **Dataset origin and licence.** `Leads.csv` is the public *Lead Scoring · X Education* set, distributed on Kaggle under a **CC0 1.0 (public domain)** licence. It is a classic lead classification case, also used as practice work on data science courses. The headers were translated into Spanish; the data itself was left untouched. The EDA, the modelling, the metric checks and the conclusions in this repository are my own work.
 
 ### Results
 
@@ -120,12 +120,12 @@ Build a classification model that predicts whether a lead will buy (`compra = 1`
 
 **XGBoost** comes out on top with an AUC-ROC of 0.92. The metrics are measured on the 20% test split (stratified) and can be reproduced by running `verificacion_metricas.py`.
 
-> **Transparency note:** an earlier version of this README published AUC 0.98 / F1 0.93. Checking the metrics with a replication script showed the real test-set values were the ones in the table. They were corrected, and the script was left in the repo so that anyone can verify them.
+> **Transparency note:** an earlier version of this README published AUC 0.98 / F1 0.93. Checking the metrics with a replication script showed the real test-set values were the ones in the table. I corrected them and left the script in the repo so anyone can check for themselves.
 
 ### Validation and limits
 
 - **Reproducibility:** `verificacion_metricas.py` replicates the data preparation, the split and the three models from the notebook, and reports the exact metrics quoted here.
-- **Funnel variables:** `ult_actividad` and the two scores assigned by the sales team capture interactions that already happened during the sale. Take them out and the AUC drops from 0.92 to **0.88** (measured). The model is there to rank leads already in play; it does not predict from first contact.
+- **Funnel variables:** `ult_actividad` and the two scores assigned by the sales team capture interactions that had already happened earlier in the sales process. Take them out and the AUC drops from 0.92 to **0.88** (measured). The model is there to rank leads already in play; it does not predict from first contact.
 - **Pending fix:** median imputation is computed over the whole dataset before the split, which is a mild statistical leak. The correct approach is to fit it on the training set alone.
 
 ### Key insights
@@ -168,4 +168,4 @@ This analysis is one piece of an analytics portfolio. Its sibling projects:
 
 ---
 
-*Parte del portfolio de [Juan Luis León](https://github.com/jleonceo) · [juanluisleon.vercel.app](https://juanluisleon.vercel.app) · Licencia [MIT](LICENSE)*
+*Parte del portfolio de / Part of [Juan Luis León](https://github.com/jleonceo)'s portfolio · [juanluisleon.vercel.app](https://juanluisleon.vercel.app) · Licencia / License: [MIT](LICENSE)*
