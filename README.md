@@ -9,7 +9,7 @@
 Las empresas con modelo inbound generan más leads de los que el equipo comercial puede atender.
 Sin priorización, el canal se satura y se pierden oportunidades de venta.
 
-**Lead Scoring** es la técnica que resuelve esto: asignar una probabilidad de compra a cada lead para que el equipo comercial focalice su esfuerzo donde el retorno es mayor.
+**Lead Scoring** es la técnica que resuelve esto: asigna a cada lead una probabilidad de compra. Así el equipo comercial focaliza el esfuerzo donde el retorno es mayor.
 
 ## Objetivo
 
@@ -24,7 +24,7 @@ Construir un modelo de clasificación que prediga si un lead comprará (`compra 
 | Variable objetivo | `compra` (binaria) |
 | Tasa de conversión | 37.6% |
 
-> **Origen y licencia del dataset.** `Leads.csv` es el conjunto público *Lead Scoring — X Education*, distribuido en Kaggle bajo licencia **CC0 1.0 (dominio público)**. Es un caso clásico de clasificación de leads, empleado también como práctica en cursos de ciencia de datos. Las cabeceras se han traducido al español; los datos no se han alterado. El EDA, la modelización, la verificación de métricas y las conclusiones de este repositorio son de elaboración propia.
+> **Origen y licencia del dataset.** `Leads.csv` es el conjunto público *Lead Scoring · X Education*, distribuido en Kaggle bajo licencia **CC0 1.0 (dominio público)**. Es un caso clásico de clasificación de leads, empleado también como práctica en cursos de ciencia de datos. Las cabeceras se han traducido al español; los datos no se han alterado. El EDA, la modelización, la verificación de métricas y las conclusiones de este repositorio son de elaboración propia.
 
 ## Resultados
 
@@ -60,7 +60,7 @@ Construir un modelo de clasificación que prediga si un lead comprará (`compra 
 ```
 lead_scoring/
 ├── lead_scoring.ipynb        # Notebook principal con EDA, modelos y visualizaciones
-├── verificacion_metricas.py  # Réplica de los modelos — reproduce las métricas del README
+├── verificacion_metricas.py  # Réplica de los modelos, reproduce las métricas del README
 ├── Leads.csv                 # Dataset público X Education (Kaggle, CC0)
 ├── requirements.txt          # Dependencias
 └── README.md                 # Este archivo
