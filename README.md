@@ -14,11 +14,11 @@ Una empresa que capta clientes por internet acaba con una lista de contactos muc
 
 Este repositorio le pone a cada contacto una nota entre cero y uno. Con esa nota ordena la lista de arriba abajo. En el oficio comercial ese contacto se llama **lead**: alguien que ha mostrado interés y todavía no ha comprado, porque rellenó un formulario, descargó un documento o pidió información.
 
-Un comercial con años encima tiene su intuición para esto y suele acertar. Lo que una intuición no puede hacer es aplicarse a nueve mil fichas cada mañana, ni explicarle a la dirección en qué se basa, ni quedarse escrita en algún sitio el día que esa persona cambia de empresa.
+Un comercial con años encima tiene su intuición para esto. Suele acertar. Lo que una intuición no puede hacer es aplicarse a nueve mil fichas cada mañana, ni explicarle a la dirección en qué se basa, ni quedarse escrita en algún sitio el día que esa persona cambia de empresa.
 
 ### El ejemplo en llamadas
 
-El proyecto aparta 1.819 fichas para examinarse a sí mismo. Dentro de ellas había 684 compradores. Ordenada la lista por la nota del modelo, llamando solo al veinte por ciento de arriba, es decir a las 363 primeras, se alcanza a 338 de esos 684 compradores. Sale prácticamente la mitad de las ventas con una quinta parte de las llamadas.
+El proyecto aparta 1.819 fichas para examinarse a sí mismo. Dentro de ellas había 684 compradores. Ordenada la lista por la nota del modelo, llamando solo al veinte por ciento de arriba, es decir a las 363 primeras, se alcanza a 338 de esos 684 compradores. Sale prácticamente la mitad de las ventas. Con una quinta parte de las llamadas.
 
 Visto llamada a llamada: de cada cien de ese tramo, 93 caen en alguien que acabó comprando, mientras que llamando al azar habrían caído 38. Ahí está el valor de este trabajo, en el reparto del esfuerzo comercial. Cuenta bastante más que el porcentaje de aciertos del modelo tomado por su cuenta.
 
@@ -96,7 +96,7 @@ Es leve. Queda declarada.
 
 Cuidado con los grupos pequeños. Entre las ocupaciones aparece «Housewife» con el cien por cien de conversión. Impresiona. Luego se mira el tamaño del grupo: diez personas.
 
-Y estos datos son un conjunto público de una empresa de formación, con su época y su mercado. Quien quisiera usar esto de verdad tendría que entrenar el modelo con sus propias ventas y repetir el entrenamiento cada temporada, porque el comportamiento de los clientes cambia y las reglas aprendidas caducan.
+Y estos datos son un conjunto público de una empresa de formación. Con su época y su mercado. Quien quisiera usar esto de verdad tendría que entrenar el modelo con sus propias ventas y repetir el entrenamiento cada temporada, porque el comportamiento de los clientes cambia y las reglas aprendidas caducan.
 
 ### Recomendaciones comerciales con su tamaño de muestra
 
@@ -145,11 +145,11 @@ A company that brings in customers through the internet ends up with a contact l
 
 This repository gives every contact a score between zero and one. That score sorts the list from top to bottom. Sales people call that contact a **lead**: someone who has shown interest and has not bought yet, because they filled in a form, downloaded a document or asked for information.
 
-An experienced sales rep has an instinct for this and is often right. What an instinct cannot do is work through nine thousand records every morning, explain to management what it rests on, or stay written down anywhere the day that person leaves the company.
+An experienced sales rep has an instinct for this. They are often right. What an instinct cannot do is work through nine thousand records every morning, explain to management what it rests on, or stay written down anywhere the day that person leaves the company.
 
 ### The example in phone calls
 
-The project sets aside 1,819 records to examine itself. There were 684 buyers inside them. Sorting the list by the model's score and calling only the top twenty per cent, that is the first 363, reaches 338 of those 684 buyers. That is roughly half the sales for a fifth of the calls.
+The project sets aside 1,819 records to examine itself. There were 684 buyers inside them. Sorting the list by the model's score and calling only the top twenty per cent, that is the first 363, reaches 338 of those 684 buyers. That is roughly half the sales. For a fifth of the calls.
 
 Call by call: out of every hundred in that band, 93 land on someone who ended up buying, against 38 for calls made at random. The value of this work lies in that allocation of effort. It counts for more than the model's hit rate on its own.
 
@@ -227,7 +227,7 @@ It is mild. It is declared.
 
 Watch out for small groups. Among the occupations, `Housewife` shows a hundred per cent conversion. It is impressive. Then you look at the size of the group: ten people.
 
-And this data is a public set from a training company, with its own period and its own market. Anyone wanting to use this for real would have to train the model on their own sales and retrain it every season, because customer behaviour shifts and learned rules expire.
+And this data is a public set from a training company. With its own period and its own market. Anyone wanting to use this for real would have to train the model on their own sales and retrain it every season, because customer behaviour shifts and learned rules expire.
 
 ### Sales recommendations with their sample size
 
