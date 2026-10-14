@@ -9,6 +9,9 @@ Incluye además el experimento de robustez: AUC sin las variables generadas
 durante el proceso comercial (ult_actividad, score_actividad, score_perfil),
 para medir cuánto dependen las métricas de información del propio funnel.
 
+Los huecos numéricos se rellenan con la mediana del conjunto de entrenamiento,
+después de separar el de test, para que nada del examen entre en el entrenamiento.
+
 Uso: python verificacion_metricas.py
 """
 import pandas as pd
@@ -20,14 +23,13 @@ from sklearn.metrics import roc_auc_score, f1_score
 import xgboost as xgb
 
 VARS_PROCESO = ['ult_actividad', 'score_actividad', 'score_perfil']
+NUMERICAS = ['visitas_total', 'paginas_vistas_visita', 'score_actividad', 'score_perfil']
 
 
 def prepara(df, excluir_proceso=False):
     d = df.copy()
     for c in ['ambito', 'ocupacion', 'fuente', 'ult_actividad']:
         d[c] = d[c].fillna('Desconocido')
-    for c in ['visitas_total', 'paginas_vistas_visita', 'score_actividad', 'score_perfil']:
-        d[c] = d[c].fillna(d[c].median())
     binarias = ['no_enviar_email', 'no_llamar', 'descarga_lm',
                 'conociste_google', 'conociste_revista', 'conociste_periodico',
                 'conociste_youtube', 'conociste_facebook', 'conociste_referencias']
@@ -43,7 +45,10 @@ def prepara(df, excluir_proceso=False):
 def split(d):
     X = d.drop(columns=['compra'])
     y = d['compra']
-    return train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+    # La mediana sale solo del entrenamiento y se aplica a los dos conjuntos.
+    medianas = X_tr[[c for c in NUMERICAS if c in X_tr.columns]].median()
+    return X_tr.fillna(medianas), X_te.fillna(medianas), y_tr, y_te
 
 
 def evalua(nombre, modelo, X_te, y_te, scaler=None):
