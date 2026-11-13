@@ -49,7 +49,7 @@ flowchart LR
         M2 ~~~ M3[XGBoost]
     end
     S1 --> S2
-    S2 --> X{Comparison<br/>on the test set}
+    S2 --> X[Comparison<br/>on the test set]
     X --> W[XGBoost,<br/>AUC 0.92]
     W --> O[Ranked list<br/>who to call<br/>first]
     style X fill:#e3f2fd,stroke:#1565c0,color:#0d47a1

@@ -49,7 +49,7 @@ flowchart LR
         M2 ~~~ M3[XGBoost]
     end
     S1 --> S2
-    S2 --> X{Comparación<br/>sobre el examen}
+    S2 --> X[Comparación<br/>sobre el examen]
     X --> W[XGBoost,<br/>AUC 0,92]
     W --> O[Lista ordenada<br/>a quién llamar<br/>primero]
     style X fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
