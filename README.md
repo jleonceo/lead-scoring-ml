@@ -5,8 +5,9 @@ English version: [README.en.md](README.en.md)
 Un modelo que ordena una lista de contactos comerciales por su probabilidad de compra, para que el equipo de ventas
 llame primero a quien más probabilidades tiene de comprar.
 
-**Resultado:** llamando solo al 20 % de la lista mejor puntuado se llega a la mitad de los compradores. De cada 100
-llamadas de ese tramo, 93 acaban en venta, frente a 38 llamando al azar.
+**Resultado:** llamando solo al 20 % de la lista mejor puntuado se llega a la mitad de los compradores.
+
+De cada 100 llamadas de ese tramo, 93 acaban en venta, frente a 38 llamando al azar.
 
 ```bash
 pip install -r requirements.txt
@@ -21,9 +22,8 @@ sus gráficos y se ejecuta de principio a fin.
 
 Una empresa que capta clientes por internet acumula más contactos de los que su equipo comercial puede atender. En
 estos datos hay 9.093 personas que dejaron sus datos en un formulario, y el 37,6 % acabó comprando. Llamar por orden
-de llegada dedica el mismo tiempo a quien iba a comprar que a quien entró por error.
-
-El modelo da a cada contacto una nota entre cero y uno, y con ella se ordena la lista.
+de llegada dedica el mismo tiempo a quien iba a comprar que a quien entró por error. El modelo da a cada contacto una
+nota entre cero y uno, y con ella se ordena la lista.
 
 ## El ejemplo
 
@@ -51,8 +51,10 @@ Dos grupos destacan por su conversión, medida sobre todo el fichero:
 | **XGBoost** | **0,9210** | **0,7883** |
 
 El **AUC** mide lo bien ordenada que queda la lista: es la probabilidad de que un comprador tomado al azar reciba
-más nota que un no comprador. Un modelo que puntuara al azar sacaría 0,50. El **F1** resume en una cifra cuántos de
-los señalados compran de verdad y cuántos compradores se llegan a señalar.
+más nota que un no comprador. El **F1** resume en una cifra cuántos de los señalados compran de verdad y cuántos
+compradores se llegan a señalar.
+
+Un modelo que puntuara al azar sacaría un AUC de 0,50.
 
 ## Datos
 
@@ -65,7 +67,7 @@ modelo y la verificación son de elaboración propia.
 - Tres de las columnas recogen lo que pasó durante la venta, como la última interacción o la puntuación que puso el
   comercial. Sin ellas, el AUC baja a 0,875. El modelo sirve para ordenar contactos que ya están en marcha y dice
   menos de quien acaba de rellenar el formulario.
-- Los grupos pequeños engañan: una ocupación con el 100 % de conversión tiene solo 10 contactos, y por eso no figura
+- Los grupos pequeños engañan: una ocupación con el 100 % de conversión tiene solo 10 contactos. Por eso no figura
   entre las recomendaciones.
 - Son datos públicos de una empresa de formación, de su época y su mercado. Para usarlo en otra empresa habría que
   entrenarlo con sus ventas y repetir el entrenamiento cada temporada.
