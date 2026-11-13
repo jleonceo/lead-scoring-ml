@@ -37,15 +37,21 @@ Dos grupos destacan por su conversión, medida sobre todo el fichero:
 ## Cómo funciona
 
 ```mermaid
-flowchart TD
-    C[9.093 contactos comerciales] --> L[Limpieza<br/>huecos y categorías]
-    L --> S[Separación estratificada<br/>7.274 para aprender, 1.819 para el examen]
-    S --> M1[Regresión logística]
-    S --> M2[Bosque aleatorio]
-    S --> M3[XGBoost]
-    M1 & M2 & M3 --> X{Comparación<br/>sobre el examen}
-    X --> W[XGBoost, AUC 0,92]
-    W --> O[Lista ordenada<br/>a quién llamar primero]
+flowchart LR
+    subgraph S1[Datos]
+        direction TB
+        C[9.093 contactos comerciales] --> L[Limpieza<br/>huecos y categorías]
+        L --> S[Separación estratificada<br/>7.274 para aprender,<br/>1.819 para el examen]
+    end
+    subgraph S2[Tres modelos]
+        direction TB
+        M1[Regresión logística] ~~~ M2[Bosque aleatorio]
+        M2 ~~~ M3[XGBoost]
+    end
+    S1 --> S2
+    S2 --> X{Comparación<br/>sobre el examen}
+    X --> W[XGBoost,<br/>AUC 0,92]
+    W --> O[Lista ordenada<br/>a quién llamar<br/>primero]
     style X fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style O fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
 ```

@@ -37,15 +37,21 @@ Two groups stand out for their conversion, measured over the whole file:
 ## How it works
 
 ```mermaid
-flowchart TD
-    C[9,093 sales contacts] --> L[Cleaning<br/>gaps and categories]
-    L --> S[Stratified split<br/>7,274 to learn, 1,819 for the test]
-    S --> M1[Logistic regression]
-    S --> M2[Random forest]
-    S --> M3[XGBoost]
-    M1 & M2 & M3 --> X{Comparison<br/>on the test set}
-    X --> W[XGBoost, AUC 0.92]
-    W --> O[Ranked list<br/>who to call first]
+flowchart LR
+    subgraph S1[Data]
+        direction TB
+        C[9,093 sales contacts] --> L[Cleaning<br/>gaps and categories]
+        L --> S[Stratified split<br/>7,274 to learn,<br/>1,819 for the test]
+    end
+    subgraph S2[Three models]
+        direction TB
+        M1[Logistic regression] ~~~ M2[Random forest]
+        M2 ~~~ M3[XGBoost]
+    end
+    S1 --> S2
+    S2 --> X{Comparison<br/>on the test set}
+    X --> W[XGBoost,<br/>AUC 0.92]
+    W --> O[Ranked list<br/>who to call<br/>first]
     style X fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style O fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
 ```
