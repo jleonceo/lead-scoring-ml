@@ -36,6 +36,21 @@ Dos grupos destacan por su conversión, medida sobre todo el fichero:
 
 ## Cómo funciona
 
+```mermaid
+flowchart TD
+    C[9.093 contactos comerciales] --> L[Limpieza<br/>huecos y categorías]
+    L --> S[Separación estratificada<br/>7.274 para aprender, 1.819 para el examen]
+    S --> M1[Regresión logística]
+    S --> M2[Bosque aleatorio]
+    S --> M3[XGBoost]
+    M1 & M2 & M3 --> X{Comparación<br/>sobre el examen}
+    X --> W[XGBoost, AUC 0,92]
+    W --> O[Lista ordenada<br/>a quién llamar primero]
+    style X fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style O fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+```
+
+
 1. Los huecos de texto se rellenan con «Desconocido».
 2. Cada categoría pasa a una columna de ceros y unos.
 3. Se separan 7.274 contactos para aprender y 1.819 para el examen, con la misma proporción de compradores en los

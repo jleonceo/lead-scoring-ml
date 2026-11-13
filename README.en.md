@@ -36,6 +36,21 @@ Two groups stand out for their conversion, measured over the whole file:
 
 ## How it works
 
+```mermaid
+flowchart TD
+    C[9,093 sales contacts] --> L[Cleaning<br/>gaps and categories]
+    L --> S[Stratified split<br/>7,274 to learn, 1,819 for the test]
+    S --> M1[Logistic regression]
+    S --> M2[Random forest]
+    S --> M3[XGBoost]
+    M1 & M2 & M3 --> X{Comparison<br/>on the test set}
+    X --> W[XGBoost, AUC 0.92]
+    W --> O[Ranked list<br/>who to call first]
+    style X fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style O fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+```
+
+
 1. Text gaps are filled with «Desconocido» (unknown).
 2. Every category becomes a column of zeros and ones.
 3. 7,274 contacts are kept for learning and 1,819 for the exam, with the same share of buyers in both.
